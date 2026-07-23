@@ -1,0 +1,438 @@
+/* ═══════════════════════════════════════════════════════════════
+   project.css  —  Project detail page styles
+   Imports styles.css as a base; this file adds page-specific rules
+═══════════════════════════════════════════════════════════════ */
+
+/* ── Back link ───────────────────────────────────────────────── */
+.project-back-wrap {
+  width: min(1180px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 100px 0 0;
+}
+
+.project-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border-bottom: 1px solid transparent;
+  padding-bottom: 2px;
+  transition: color 160ms ease, border-color 160ms ease;
+}
+
+.project-back:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+/* ── Project body (meta + details) ───────────────────────────── */
+.project-body {
+  width: min(1180px, calc(100% - 40px));
+  margin: 36px auto 0;
+  display: grid;
+  grid-template-columns: 0.42fr 0.58fr;
+  gap: clamp(32px, 6vw, 72px);
+  align-items: start;
+}
+
+/* Meta column */
+.project-meta-col {
+  position: sticky;
+  top: 100px;
+}
+
+.project-meta-col h1 {
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  line-height: 1.05;
+  margin-bottom: 28px;
+  max-width: 100%;
+}
+
+.meta-grid {
+  display: grid;
+  gap: 0;
+  border: 1px solid var(--line);
+  margin-bottom: 28px;
+}
+
+.meta-item {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 8px;
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--line);
+  background:
+    linear-gradient(135deg, rgba(66, 232, 197, 0.06), rgba(88, 169, 255, 0.03)),
+    var(--panel);
+}
+
+.meta-item:last-child {
+  border-bottom: 0;
+}
+
+.meta-item span {
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding-top: 2px;
+}
+
+.meta-item strong {
+  color: var(--text);
+  font-size: 0.94rem;
+  line-height: 1.4;
+}
+
+.tech-label {
+  color: var(--accent-3);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin: 0 0 12px;
+}
+
+/* Detail column */
+.project-detail-col {
+  display: grid;
+  gap: 20px;
+}
+
+.project-detail-card {
+  padding: clamp(22px, 4vw, 34px);
+  border: 1px solid var(--line);
+  background:
+    linear-gradient(135deg, rgba(66, 232, 197, 0.08), rgba(88, 169, 255, 0.035)),
+    var(--panel);
+  box-shadow: 0 16px 50px rgba(0, 0, 0, 0.16);
+}
+
+.project-detail-card h2 {
+  font-size: 1.12rem;
+  margin-bottom: 16px;
+  color: var(--accent);
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 12px;
+}
+
+.project-detail-card p {
+  color: var(--muted);
+  line-height: 1.75;
+  margin: 0;
+}
+
+.project-detail-card ul {
+  margin: 0;
+  padding-left: 20px;
+  display: grid;
+  gap: 10px;
+}
+
+.project-detail-card li {
+  color: var(--muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.project-detail-card li::marker {
+  color: var(--accent);
+}
+
+/* ── Gallery ──────────────────────────────────────────────────── */
+.project-hero {
+  width: 100%;
+  margin: 64px 0 0;
+}
+
+.gallery-heading {
+  width: min(1180px, calc(100% - 40px));
+  margin: 0 auto 20px;
+}
+
+/* 1.5 inch = ~144px inset from each side */
+.gallery-main-wrap {
+  padding: 0 144px;
+}
+
+.gallery-main {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 14 / 7;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: var(--panel-strong);
+}
+
+.gallery-main-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: opacity 240ms ease;
+}
+
+.gallery-counter {
+  position: absolute;
+  bottom: 16px;
+  right: 18px;
+  background: rgba(5, 9, 12, 0.72);
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  padding: 4px 10px;
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--line);
+}
+
+.gallery-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 46px;
+  height: 46px;
+  border: 1px solid var(--line);
+  background: rgba(5, 9, 12, 0.68);
+  color: var(--text);
+  font-size: 1.2rem;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  transition: background 160ms ease, border-color 160ms ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gallery-arrow:hover {
+  background: rgba(66, 232, 197, 0.22);
+  border-color: var(--accent);
+}
+
+.gallery-prev { left: 14px; }
+.gallery-next { right: 14px; }
+
+/* Thumbnail strip */
+.gallery-thumbs {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 14px;
+  padding: 0 144px 4px;
+  overflow-x: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--line) transparent;
+}
+
+.gallery-thumb {
+  flex-shrink: 0;
+  width: 100px;
+  height: 66px;
+  padding: 0;
+  border: 2px solid var(--line);
+  background: var(--panel-strong);
+  cursor: pointer;
+  overflow: hidden;
+  transition: border-color 160ms ease, transform 160ms ease;
+}
+
+.gallery-thumb img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.gallery-thumb:hover {
+  border-color: rgba(66, 232, 197, 0.54);
+  transform: translateY(-2px);
+}
+
+.gallery-thumb.is-active {
+  border-color: var(--accent);
+  box-shadow: 0 0 18px rgba(66, 232, 197, 0.28);
+}
+
+/* ── Other projects ───────────────────────────────────────────── */
+.other-projects-section {
+  width: min(1180px, calc(100% - 40px));
+  margin: 72px auto 80px;
+}
+
+.other-projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.other-card {
+  border: 1px solid var(--line);
+  background:
+    linear-gradient(135deg, rgba(66, 232, 197, 0.08), rgba(88, 169, 255, 0.035)),
+    var(--panel);
+  overflow: hidden;
+  transition: border-color 180ms ease, transform 180ms ease;
+}
+
+.other-card:hover {
+  border-color: rgba(66, 232, 197, 0.7);
+  transform: translateY(-3px);
+}
+
+.other-card img {
+  display: block;
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  filter: saturate(1.06) contrast(1.04);
+  transition: transform 260ms ease;
+}
+
+.other-card:hover img {
+  transform: scale(1.04);
+}
+
+.other-card-body {
+  padding: 20px;
+}
+
+.other-card-body span {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--accent-3);
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.other-card-body h3 {
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+
+.other-card-body p {
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.6;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ── Card CTA label on main portfolio grid ────────────────────── */
+.card-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 14px;
+  color: var(--accent);
+  font-size: 0.84rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: gap 160ms ease;
+}
+
+.impact-card:hover .card-cta {
+  gap: 10px;
+}
+
+/* ── Responsive ───────────────────────────────────────────────── */
+@media (max-width: 980px) {
+  .project-body {
+    grid-template-columns: 1fr;
+  }
+
+  .project-meta-col {
+    position: static;
+  }
+
+  .gallery-main-wrap {
+    padding: 0 48px;
+  }
+
+  .gallery-thumbs {
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+
+  .other-projects-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .project-back-wrap {
+    padding-top: 24px;
+    width: calc(100% - 32px);
+  }
+
+  .project-hero {
+    margin-top: 40px;
+  }
+
+  /* No side inset on small phones — full width looks better */
+  .gallery-main-wrap {
+    padding: 0;
+  }
+
+  .gallery-main {
+    aspect-ratio: 4 / 3;
+  }
+
+  .gallery-thumbs {
+    padding-left: 16px;
+    padding-right: 16px;
+    justify-content: flex-start;
+  }
+
+  .gallery-thumb {
+    width: 72px;
+    height: 50px;
+  }
+
+  .gallery-arrow {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+
+  .project-body {
+    width: calc(100% - 32px);
+    margin-top: 32px;
+    gap: 20px;
+  }
+
+  .project-meta-col h1 {
+    font-size: clamp(1.5rem, 7vw, 2rem);
+  }
+
+  .meta-item {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+
+  .other-projects-section {
+    width: calc(100% - 32px);
+    margin-top: 48px;
+    margin-bottom: 56px;
+  }
+
+  .other-projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-detail-card {
+    padding: 18px;
+  }
+}

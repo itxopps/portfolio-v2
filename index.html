@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Portfolio website for Muhammad Faisal, Siemens Control Systems and BMS Engineer.">
+    <title>Muhammad Faisal | BMS and Smart Building Engineer</title>
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="topbar" aria-label="Primary navigation">
+        <a class="brand" href="#home" aria-label="Muhammad Faisal home">
+          <span class="brand-mark">MF</span>
+          <span class="brand-copy">
+            <strong>Muhammad Faisal</strong>
+            <small>BMS / Smart Buildings / EV infrastructure / Embedded systems</small>
+          </span>
+        </a>
+
+        <nav class="nav-links" aria-label="Portfolio sections">
+          <a href="#expertise">Expertise</a>
+          <a href="#experience">Experience</a>
+          <a href="#projects">Projects</a>
+          <a href="#education">Education</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <div style="display:flex;align-items:center;gap:8px;flex-shrink:0;">
+          <button class="icon-button" id="themeToggle" type="button" aria-label="Toggle light theme" title="Toggle theme">
+            <span aria-hidden="true">T</span>
+          </button>
+          <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="mobileNav">
+            <span aria-hidden="true">☰</span>
+          </button>
+        </div>
+      </header>
+
+      <nav class="nav-overlay" id="mobileNav" aria-label="Mobile navigation">
+        <a href="#expertise" class="nav-close-link">Expertise</a>
+        <a href="#experience" class="nav-close-link">Experience</a>
+        <a href="#projects" class="nav-close-link">Projects</a>
+        <a href="#education" class="nav-close-link">Education</a>
+        <a href="#contact" class="nav-close-link">Contact</a>
+      </nav>
+
+      <main>
+        <section class="hero" id="home">
+          <div class="hero-bg" aria-hidden="true"></div>
+          <div class="hero-inner">
+            <div class="hero-copy">
+              <p class="eyebrow" id="heroLocation"></p>
+              <h1 id="heroName"></h1>
+              <p class="hero-title" id="heroTitle"></p>
+              <p class="hero-summary" id="heroSummary"></p>
+              <div class="hero-actions" id="heroActions"></div>
+            </div>
+
+            <div class="hero-console">
+              <aside class="profile-card" aria-label="Profile snapshot">
+                <img id="profileImage" alt="">
+                <div class="profile-card-copy">
+                  <span>Profile signal</span>
+                  <strong id="profileRole"></strong>
+                </div>
+              </aside>
+
+              <aside class="signal-panel" aria-label="Career signal">
+                <div class="signal-header">
+                  <span class="pulse" aria-hidden="true"></span>
+                  <span>Live specialization map</span>
+                </div>
+                <div class="signal-grid" id="signalGrid"></div>
+              </aside>
+            </div>
+          </div>
+        </section>
+
+        <section class="stats-band" aria-label="Profile highlights">
+          <div class="stats-grid" id="statsGrid"></div>
+        </section>
+
+        <section class="section" id="expertise">
+          <div class="section-heading">
+            <p class="eyebrow">Core systems</p>
+            <h2>Technical Expertise</h2>
+          </div>
+          <div class="skill-layout">
+            <div class="skill-groups" id="skillGroups"></div>
+            <div class="toolbox">
+              <h3>Tools and protocols</h3>
+              <div class="chips" id="toolChips"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section section-split" id="experience">
+          <div class="section-heading sticky-heading">
+            <p class="eyebrow">Field record</p>
+            <h2>Experience</h2>
+            <p>Commissioning, controls engineering, Modbus integration, smart energy work, and EV infrastructure development.</p>
+          </div>
+          <div class="timeline-shell">
+            <div class="timeline-tabs" id="timelineTabs" role="tablist" aria-label="Experience roles"></div>
+            <article class="experience-detail" id="experienceDetail"></article>
+          </div>
+        </section>
+
+        <section class="section" id="projects">
+          <div class="section-heading">
+            <p class="eyebrow">Selected builds</p>
+            <h2>Project Gallery</h2>
+          </div>
+          <div class="project-filters" id="projectFilters" aria-label="Project filters"></div>
+          <div class="impact-grid" id="impactGrid"></div>
+        </section>
+
+        <section class="section section-split compact" id="education">
+          <div class="section-heading">
+            <p class="eyebrow">Credentials</p>
+            <h2>Education and Recognition</h2>
+          </div>
+          <div>
+            <div class="education-list" id="educationList"></div>
+            <div class="award-banner" id="awardBanner"></div>
+          </div>
+        </section>
+
+        <section class="contact-section" id="contact">
+          <div>
+            <p class="eyebrow">Available across KSA and GCC</p>
+            <h2>Senior BMS, Building Automation, and Smart Systems roles.</h2>
+          </div>
+          <div class="contact-actions" id="contactActions"></div>
+        </section>
+      </main>
+    </div>
+
+    <script src="./data.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>

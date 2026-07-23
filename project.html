@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Project detail — Muhammad Faisal, BMS and Smart Building Engineer.">
+    <title>Project | Muhammad Faisal</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./project.css">
+  </head>
+  <body>
+    <div class="site-shell">
+
+      <!-- Topbar (same as main site) -->
+      <header class="topbar" aria-label="Primary navigation">
+        <a class="brand" href="./index.html" aria-label="Muhammad Faisal home">
+          <span class="brand-mark">MF</span>
+          <span class="brand-copy">
+            <strong>Muhammad Faisal</strong>
+            <small>BMS / Smart Buildings / EV infrastructure</small>
+          </span>
+        </a>
+        <nav class="nav-links" aria-label="Portfolio sections">
+          <a href="./index.html#expertise">Expertise</a>
+          <a href="./index.html#experience">Experience</a>
+          <a href="./index.html#projects">Projects</a>
+          <a href="./index.html#education">Education</a>
+          <a href="./index.html#contact">Contact</a>
+        </nav>
+        <div style="display:flex;align-items:center;gap:8px;flex-shrink:0;">
+          <button class="icon-button" id="themeToggle" type="button" aria-label="Toggle light theme" title="Toggle theme">
+            <span aria-hidden="true">T</span>
+          </button>
+          <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open navigation" aria-expanded="false">
+            <span aria-hidden="true">☰</span>
+          </button>
+        </div>
+      </header>
+
+      <nav class="nav-overlay" id="mobileNav" aria-label="Mobile navigation">
+        <a href="./index.html#expertise" class="nav-close-link">Expertise</a>
+        <a href="./index.html#experience" class="nav-close-link">Experience</a>
+        <a href="./index.html#projects" class="nav-close-link">Projects</a>
+        <a href="./index.html#education" class="nav-close-link">Education</a>
+        <a href="./index.html#contact" class="nav-close-link">Contact</a>
+      </nav>
+
+      <main id="projectMain">
+
+        <!-- Back button -->
+        <div class="project-back-wrap">
+          <a href="./index.html#projects" class="project-back">
+            <span aria-hidden="true">←</span> All Projects
+          </a>
+        </div>
+
+        <!-- Project title + meta + details -->
+        <section class="project-body" id="projectBody">
+
+          <div class="project-meta-col">
+            <p class="eyebrow" id="metaTag"></p>
+            <h1 id="metaTitle"></h1>
+            <div class="meta-grid" id="metaGrid"></div>
+            <div class="tech-stack" id="techStack"></div>
+          </div>
+
+          <div class="project-detail-col">
+            <div class="project-detail-card" id="projectOverview">
+              <h2>Project Overview</h2>
+              <p id="detailText"></p>
+            </div>
+
+            <div class="project-detail-card" id="projectHighlights">
+              <h2>Key Highlights</h2>
+              <ul id="highlightsList"></ul>
+            </div>
+          </div>
+
+        </section>
+
+        <!-- Gallery — below the text content -->
+        <section class="project-hero" id="projectHero" aria-label="Project gallery">
+          <div class="gallery-heading">
+            <p class="eyebrow">Project Images</p>
+          </div>
+          <div class="gallery-main-wrap">
+            <div class="gallery-main" id="galleryMain">
+              <img id="galleryMainImg" src="" alt="" class="gallery-main-img">
+              <div class="gallery-counter" id="galleryCounter"></div>
+              <button class="gallery-arrow gallery-prev" id="galleryPrev" aria-label="Previous image">&#8592;</button>
+              <button class="gallery-arrow gallery-next" id="galleryNext" aria-label="Next image">&#8594;</button>
+            </div>
+          </div>
+          <div class="gallery-thumbs" id="galleryThumbs"></div>
+        </section>
+
+        <!-- Other projects -->
+        <section class="other-projects-section" id="otherProjects">
+          <div class="section-heading">
+            <p class="eyebrow">More work</p>
+            <h2>Other Projects</h2>
+          </div>
+          <div class="other-projects-grid" id="otherProjectsGrid"></div>
+        </section>
+
+      </main>
+    </div>
+
+    <script src="./data.js"></script>
+    <script src="./project.js"></script>
+  </body>
+</html>
